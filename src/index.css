@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+}
+
+.drag-handle {
+  cursor: move;
+}
+
+.resize-handle {
+  cursor: nwse-resize;
+}
+
+.element-selected {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.no-select {
+  user-select: none;
+}
