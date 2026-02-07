@@ -491,7 +491,28 @@ const ManagerPage = () => {
                   </div>
                 )}
                 {bgType === 'image' && (
-                  <input type="text" placeholder="Enter image URL..." value={currentCard.background.type === 'image' ? currentCard.background.value : ''} onChange={(e) => updateCardBackground({ type: 'image', value: e.target.value })} className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg" />
+                  <div className="space-y-2">
+                    <input type="text" placeholder="Enter image URL..." value={currentCard.background.type === 'image' ? currentCard.background.value : ''} onChange={(e) => updateCardBackground({ type: 'image', value: e.target.value })} className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg" />
+                    <div>
+                      <label className="text-xs text-gray-500 block mb-1">Or Upload Image</label>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                              updateCardBackground({ type: 'image', value: event.target.result });
+                            };
+                            reader.readAsDataURL(file);
+                          }
+                          e.target.value = '';
+                        }}
+                        className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg file:mr-2 file:py-1 file:px-3 file:rounded file:border-0 file:bg-indigo-50 file:text-indigo-700 file:cursor-pointer"
+                      />
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
