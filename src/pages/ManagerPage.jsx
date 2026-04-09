@@ -29,7 +29,8 @@ import {
   Redo2,
   FileImage,
   FileText,
-  Home
+  Home,
+  HelpCircle
 } from 'lucide-react';
 
 const ManagerPage = () => {
@@ -349,7 +350,10 @@ const ManagerPage = () => {
             Export JSON
           </button>
           <div className="w-px h-6 bg-gray-200 mx-2" />
-          <a href="/" className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-indigo-600">
+          <a href="/help" className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-indigo-600" title="Hướng dẫn sử dụng">
+            <HelpCircle size={18} />
+          </a>
+          <a href="/" className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-indigo-600" title="Về trang chủ">
             <Home size={18} />
           </a>
           <button onClick={handleLogout} className="flex items-center gap-2 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg">

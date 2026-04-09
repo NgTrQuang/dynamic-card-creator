@@ -13,7 +13,8 @@ import {
   ChevronRight,
   Check,
   RefreshCw,
-  Upload
+  Upload,
+  HelpCircle
 } from 'lucide-react';
 
 const CardCreatorPage = () => {
@@ -224,13 +225,22 @@ const CardCreatorPage = () => {
               <CreditCard size={28} className="text-indigo-600" />
               <h1 className="text-xl font-bold text-gray-800">Card Creator</h1>
             </div>
-            <Link
-              to="/login"
-              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-indigo-600 transition-colors"
-            >
-              <Settings size={18} />
-              Manager
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link
+                to="/help"
+                className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+              >
+                <HelpCircle size={18} />
+                Hướng dẫn
+              </Link>
+              <Link
+                to="/login"
+                className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+              >
+                <Settings size={18} />
+                Manager
+              </Link>
+            </div>
           </div>
         </div>
       </header>

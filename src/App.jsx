@@ -6,6 +6,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import CardCreatorPage from './pages/CardCreatorPage';
 import ManagerPage from './pages/ManagerPage';
 import LoginPage from './pages/LoginPage';
+import HelpPage from './pages/HelpPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<CardCreatorPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/help" element={<HelpPage />} />
             <Route
               path="/manager"
               element={
